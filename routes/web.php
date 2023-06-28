@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Guest\IlPadrino;
 use App\Http\Controllers\Guest\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'index'])->name('movies');
 
-Route::get('/otherpage', function () {
-    $links = config('store.someLinks');
-    return view('other', compact('links'));
-});
+Route::get('/ilPadrino', [IlPadrino::class, 'index'])->name('ilPadrino');
